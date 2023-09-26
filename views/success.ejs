@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="dis" style="color: rgb(19, 113, 19);"><%=success%></h3>
+    success 
+    <h1 id="one" style="color: rgb(13, 172, 13);"><%= name %></h1>
+    <form method="GET" action="/users">
+        <button>view users</button>
+    </form>
+    <form method="GET" action="/logout">
+        <button type="submit">Logut</button>
+    </form>
+    
+    <script>
+        var myHeading = document.getElementById("dis");
+        var myheading2 = document.getElementById("one");
+        // Function to make the element disappear
+        function disappear() {
+            myHeading.style.display = "none";
+            myheading2.style.display = "none";
+        }
+        // Set a timeout to call the "disappear" function after 5 seconds (5000 milliseconds)
+        setTimeout(disappear, 5000);
+    </script>
+</body>
+</html>

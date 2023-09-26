@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            padding: 100px;
+        }
+        .container{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            text-align: center;
+            padding:10px;
+            margin:50px 500px;
+            width:550px;
+            border-radius:10px;
+        }
+        .container>.heading{
+        color:#414144;
+        font-size:2rem;
+        margin:20px;
+        }
+        .btn{
+        background-color:white;
+        margin:20px;
+        color:#414144;
+        border:none;
+        border-radius:5px;
+        box-shadow: 2px 2px 2px #B4B5BA;
+        width:100px;
+        padding:10px;
+        transition: background-color 0.3s ease;
+        }
+        .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s ease;
+        }
+
+        .btn:hover {
+        background-color: #279E82;
+        color:white;
+        }
+
+        .sign{
+        color:#279E82;
+        }
+        .f{
+        color:#F61F1F;
+        }
+      .form-input{
+        text-align:left;
+        margin:auto;
+        width:450px;
+        padding-top:30px;
+        box-shadow:0 0 5px rgba(0,0,0,0);
+      }
+
+      .form-label{
+        color:#414144;
+        margin-left:10px;
+      }
+       .form-input>.email,.pass{
+        border:none;
+        border-radius:5px;
+        margin-left:10px;
+        margin-right:35px;
+        width:100%;
+        height:25px;
+        padding:18px;
+      }
+      .click{
+        color:#414144;
+        
+      }
+
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1 class="heading"> <span class="sign">Login </span><span class="f">form</span></h1>
+        <form method="POST" action="/logedin">
+            <div class="form-input">
+              <label for="email" class="form-label">Email</label><br>
+              <input type="text" class="email" name="email" placeholder="Enter your email" required><br>
+            </div>
+            <div class="form-input" style="padding-bottom:10px">
+              <label for="pass" class="form-label">Pass</label><br>
+              <input type="text" class="pass" name="pass" placeholder="Enter your pass" required>
+            </div>
+            <button class="btn">Login</button>
+            <h6 class="click">New hear? then <a href="/signup">click</a> me</h6>
+        </form>
+        <h5 id="dis" style="color: rgb(220, 16, 111);"><%= error %></h5>
+        
+        
+        
+        <script>
+            var myHeading = document.getElementById("dis");
+            // Function to make the element disappear
+            function disappear() {
+                myHeading.style.display = "none";
+            }
+            // Set a timeout to call the "disappear" function after 5 seconds (5000 milliseconds)
+            setTimeout(disappear, 5000);
+        </script>
+    </div>
+</body>
+</html>
